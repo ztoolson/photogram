@@ -1,7 +1,13 @@
 class PostsController < ApplicationController
   def create
-    @post = Post.create(post_params)
-    redirect_to @post
+    @post = Post.new(post_params)
+    if @post.save
+      flash[:sucess] = 'Post successfully created'
+      redirect_to @post
+    else
+      flash[:alert] = 'Halt, you fiend! You need an image to post here!'
+      render 'new'
+    end
   end
 
   def index
