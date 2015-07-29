@@ -10,6 +10,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
   def index
     @posts = Post.all
   end
@@ -20,6 +24,13 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update_attributes(post_params)
+    flash[:success] = 'Post successfully updated'
+    redirect_to @post
   end
 
   private
