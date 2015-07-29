@@ -52,3 +52,6 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
+group :development do
+  gem 'erb2haml'
+end
