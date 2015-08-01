@@ -3,11 +3,11 @@
     .post-head
       .name
         Zach Toolson
-      .image.center-block
-        = image_tag @post.image.url(:medium)
-      %p.caption
-        = @post.caption
-        .text-center.edit-links
-        = link_to "Cancel", posts_path
-        |
-        = link_to 'Edit Post', edit_post_path(@post)
+    .image.center-block
+      =image_tag @post.image.url(:medium)
+    %p.caption
+      =@post.caption
+    .text-center.edit-links
+      = link_to "Posts", posts_path
+      |
+      = link_to "Edit Post", edit_post_path(@post)
