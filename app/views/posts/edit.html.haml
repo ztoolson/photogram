@@ -1,10 +1,6 @@
-%h1 Edit post page
-
-= simple_form_for @post do |f|
-  = f.input :image
-  = f.input :caption
-  = f.button :submit
-
+.text-center
+  = image_tag @post.image.url(:medium)
+= render 'form'
 .text-center.edit-links
   = button_to 'Delete Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }
   |
