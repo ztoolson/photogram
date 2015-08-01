@@ -28,9 +28,12 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update_attributes(post_params)
-    flash[:success] = 'Post successfully updated'
-    redirect_to @post
+    if @post.update_attributes(post_params)
+      flash[:success] = 'Post successfully updated'
+    else
+      flash[:success] = 'Something is wrong with your form'
+    end
+      redirect_to @post
   end
 
   private

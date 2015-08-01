@@ -14,4 +14,10 @@ feature 'edit an existing post' do
     expect(page).to have_content('Post successfully updated')
     expect(page).to have_content('Wow I cannot spell. Better update that')
   end
+
+  scenario 'fill in the image field with nothing' do
+    attach_file('Image', 'spec/files/fake.zip')
+    click_button 'Update Post'
+    expect(page).to have_content('Something is wrong with your form')
+  end
 end
