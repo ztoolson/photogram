@@ -4,3 +4,8 @@
   = f.input :image
   = f.input :caption
   = f.button :submit
+
+.text-center.edit-links
+  = button_to 'Delete Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }
+  |
+  = link_to 'Cancel', posts_path
