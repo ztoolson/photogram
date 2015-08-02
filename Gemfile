@@ -6,6 +6,7 @@ gem 'rails', '4.2.3'
 gem 'haml'
 gem 'simple_form'
 gem 'paperclip' # prerequisite: sudo apt-get install imagemagick -y
+gem 'bootstrap-sass'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
